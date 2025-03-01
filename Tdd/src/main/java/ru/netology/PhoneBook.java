@@ -22,8 +22,39 @@ public class PhoneBook {
     }
 
     public int add(String phone,String name) {
-
-        return 0;
+        boolean test = true;
+        if (pBook.containsValue(phone))
+            if (phone.charAt(0) == '+') {
+                if (!(phone.length() == 12)) {
+                    test = false;
+                }
+            } else if (phone.length() > 12 || phone.length() < 10) {
+                test = false;
+            }
+        if (phone.charAt(0) == '8') {
+            if (!(phone.length() == 11)) {
+                test = false;
+            }
+        } else if (phone.length() > 12 || phone.length() < 10) {
+            test = false;
+        }
+        if (name.length() <= 1 | name.length() > 10) {
+            test = false;
+        }
+        if (pBook.containsKey(phone)) {
+            test = false;
+        }
+        if (test) {
+            pBook.put(phone, name);
+        }
+        return pBook.size();
     }
 
+    public String findByNumber(String phone) {
+        if (pBook.containsKey(phone)) {
+            return pBook.get(phone) + " - " + phone;
+        } else {
+            return "";
+        }
+    }
 }
