@@ -26,9 +26,9 @@ public class PhoneBookTest {
         phoneBook.add("+79315851646", "Oleg");
         phoneBook.add("+79315851647", "Vasya");
         phoneBook.add("+79315851648", "Petya");
-        String actual = "Petya";
+        String actual = "Vasya";
         //Act
-        String expected = phoneBook.findByNumber("+79315851648");
+        String expected = phoneBook.findByNumber("+79315851647");
         //Assert
         if (actual.equals(expected)) {
             System.out.println("Тест на поиск имени по номеру пройден");
