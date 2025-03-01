@@ -71,9 +71,15 @@ public class PhoneBook {
         return number;
     }
 
-    public List<String> printNames() {
+    public List<String> printAllNames() {
         List<String> names = new ArrayList<>();
+        Comparator<String> comparator1 = (a, b) -> a.compareTo(b);
 
+        for (Map.Entry<String, String> entry : pBook.entrySet()) {
+            String name = entry.getValue();
+            names.add(name);
+        }
+        sortList(names, comparator1);
         return names;
     }
 }

@@ -58,14 +58,14 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void testPrintNames() {
+    public void testPrintAllNames() {
         //Arrange
         phoneBook.add("+79315851646", "Oleg");
         phoneBook.add("+79315851647", "Vasya");
         phoneBook.add("+79315851648", "Petya");
         List<String> actual = new ArrayList<>(Arrays.asList("Oleg", "Petya", "Vasya"));
         //Act
-        List<String> expected = phoneBook.printNames();
+        List<String> expected = phoneBook.printAllNames();
         //Assert
         if (actual.equals(expected)) {
             System.out.println("Тест на вывод имён пройдет");
