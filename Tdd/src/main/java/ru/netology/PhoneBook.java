@@ -51,10 +51,6 @@ public class PhoneBook {
     }
 
     public String findByNumber(String phone) {
-        if (pBook.containsKey(phone)) {
-            return pBook.get(phone) + " - " + phone;
-        } else {
-            return "";
-        }
+      return null;
     }
 }
