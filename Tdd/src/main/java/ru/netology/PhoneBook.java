@@ -53,4 +53,8 @@ public class PhoneBook {
     public String findByNumber(String phone) {
          return pBook.get(phone);
     }
+
+    public String findByName(){
+        return null;
+    }
 }
