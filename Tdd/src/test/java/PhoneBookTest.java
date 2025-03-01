@@ -1,6 +1,10 @@
 import org.junit.jupiter.api.Test;
 import ru.netology.PhoneBook;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class PhoneBookTest {
     PhoneBook phoneBook = new PhoneBook();
 
@@ -51,5 +55,22 @@ public class PhoneBookTest {
             System.out.println("Тест на поиск номера по имени пройден");
         } else
             throw new AssertionError("Тест на поиск имени по номеру не пройден");
+    }
+
+    @Test
+    public void testPrintNames() {
+        //Arrange
+        phoneBook.add("+79315851646", "Oleg");
+        phoneBook.add("+79315851647", "Vasya");
+        phoneBook.add("+79315851648", "Petya");
+        List<String> actual = new ArrayList<>(Arrays.asList("Oleg", "Petya", "Vasya"));
+        //Act
+        List<String> expected = phoneBook.printNames();
+        //Assert
+        if (actual.equals(expected)) {
+            System.out.println("Тест на вывод имён пройдет");
+        } else
+            throw new AssertionError("Тест на вывод имён не пройден");
+
     }
 }
