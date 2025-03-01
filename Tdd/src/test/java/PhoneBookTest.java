@@ -20,8 +20,9 @@ public class PhoneBookTest {
         } else
             throw new AssertionError("Тест на правильный номер не пройден");
     }
+
     @Test //Тест на поиск имени по номеру телефона
-    public void testFindByNumber () {
+    public void testFindByNumber() {
         //Arrange
         phoneBook.add("+79315851646", "Oleg");
         phoneBook.add("+79315851647", "Vasya");
@@ -37,17 +38,17 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void testfindByName(){
+    public void testFindByName() {
         //Arrange
         phoneBook.add("+79315851646", "Oleg");
         phoneBook.add("+79315851647", "Vasya");
         phoneBook.add("+79315851648", "Petya");
         String actual = "+79315851646";
         //Act
-        String expected = phoneBook.findByNumber("Oleg");
+        String expected = phoneBook.findByName("Oleg");
         //Assert
         if (actual.equals(expected)) {
-            System.out.println("Тест на поиск имени по номеру пройден");
+            System.out.println("Тест на поиск номера по имени пройден");
         } else
             throw new AssertionError("Тест на поиск имени по номеру не пройден");
     }

@@ -21,7 +21,7 @@ public class PhoneBook {
         return INSTANCE;
     }
 
-    public int add(String phone,String name) {
+    public int add(String phone, String name) {
         boolean test = true;
         if (pBook.containsValue(phone))
             if (phone.charAt(0) == '+') {
@@ -51,10 +51,19 @@ public class PhoneBook {
     }
 
     public String findByNumber(String phone) {
-         return pBook.get(phone);
+        return pBook.get(phone);
     }
 
-    public String findByName(){
-        return null;
+    public String findByName(String name) {
+        String number = null;
+        for (Map.Entry<String, String> entry : pBook.entrySet()) {
+            String phone = entry.getKey();
+            String nameEntry = entry.getValue();
+            if (nameEntry.equals(name)) {
+                number = phone;
+            }
+
+        }
+        return number;
     }
 }
